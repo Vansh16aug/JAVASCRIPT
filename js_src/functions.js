@@ -4,11 +4,11 @@
 //     console.log(a+b);
 // }
 
-console.log("Namaste ")
+// console.log("Namaste ")
 var x=1;
+a();
 b();
 console.log(x);
-a();
 
 
 
