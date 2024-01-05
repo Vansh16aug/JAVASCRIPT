@@ -1,3 +1,14 @@
+function x(){
+    var a=7;
+    function y(){
+        console.log(a);
+    }
+    y();
+    return y;
+}
+x();
+
+
 // function end(){
 //     let e="hello";
 //     function bharwala(){
@@ -21,20 +32,20 @@
 // var close=end()()()("hello");
 // close() ;
 
-function counter(){
-    var count =0;
-    return function incrementCounter(){
-        count++;
-        console.log(count);
-    }
-}
-var counter1=counter();
-counter1();
-counter1();
-counter1();
+// function counter(){
+//     var count =0;
+//     return function incrementCounter(){
+//         count++;
+//         console.log(count);
+//     }
+// }
+// var counter1=counter();
+// counter1();
+// counter1();
+// counter1();
 
-var counter2=counter()
-counter2();
-counter2();
+// var counter2=counter()
+// counter2();
+// counter2();
 
-counter1();
+// counter1();
