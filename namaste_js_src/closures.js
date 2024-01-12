@@ -1,12 +1,18 @@
 function x(){
     var a=7;
-    function y(){
-        console.log(a);
+    // function y(){
+    //     console.log(a);
+    // }
+    // return y;
+    return function y() {
+      console.log(a);
     }
-    y();
-    return y;
+
 }
-x();
+//here comes the closures into picture , z stores the full function x along with its lexical enviroment .
+var z=x();
+console.log(z);
+z();
 
 
 // function end(){
