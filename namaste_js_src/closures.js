@@ -1,57 +1,49 @@
-function x(){
-    var a=7;
-    // function y(){
-    //     console.log(a);
-    // }
-    // return y;
-    return function y() {
-      console.log(a);
+// function x(){
+//     var a=7;
+//     // function y(){
+//     //     console.log(a);
+//     // }
+//     // return y;
+//     return function y() {
+//       console.log(a);
+//     }
+
+// }
+
+// //here comes the closures into picture , z stores the full function x along with its lexical enviroment .
+
+// var z=x();
+// console.log(z);
+// z();
+
+
+// function a(){
+//     var i=1;
+//     for(var i=1;i<=5;i++){
+//         setTimeout(function (){
+//             console.log(i);
+//         },i*1000);
+//     }
+//     console.log("Namaste Javascript");
+// }
+// a();
+
+// if we'll use var , javascript will not wait for anyone and will execute remaining code and due to it all the iteration of the for loop will be done and i value becomes 6 .
+
+// whereas if we use let , it has its own block scope , so after every iteration it stores it differently
+
+// but if we have to do it using var only , so what we need to do -> we can form a closure , by enclosing the settimeout func inside a function and we have to supply/pass the value of i with every iteration as a new copy of i .
+
+function a() {
+    var i = 1;
+    for (var i = 1; i <= 5; i++) {
+        function close(i){
+            setTimeout(function () {
+                console.log(i);
+            }, i * 1000);
+        }
+        close(i);
     }
-
+  console.log("Namaste Javascript");
 }
-//here comes the closures into picture , z stores the full function x along with its lexical enviroment .
-var z=x();
-console.log(z);
-z();
-
-
-// function end(){
-//     let e="hello";
-//     function bharwala(){
-//         var d=100;
-//         function outest(){   
-//             var c=20;
-//             function outer(b){
-                
-//                 function inner(){
-//                     console.log(a,b,c,d,e);
-//                 }
-//                 let a=10;
-//                 return inner;
-//             }
-//             return outer;
-//         }
-//         return outest;
-//     }
-//     return bharwala;
-// }
-// var close=end()()()("hello");
-// close() ;
-
-// function counter(){
-//     var count =0;
-//     return function incrementCounter(){
-//         count++;
-//         console.log(count);
-//     }
-// }
-// var counter1=counter();
-// counter1();
-// counter1();
-// counter1();
-
-// var counter2=counter()
-// counter2();
-// counter2();
-
-// counter1();
+a();
