@@ -20,3 +20,4 @@ function sum() {
 
 let ans = sum(1,2);
 console.log(ans);
+console.log(ans);
