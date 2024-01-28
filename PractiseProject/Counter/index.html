@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="flex flex-col justify-center items-center overflow-hidden w-[100vw] h-[100vh] bg-[#344151] gap-10">
+        <div class="text-[#0398d4] text-[20px] font-medium">Increment And Decrement</div>
+        <div class="flex flex-row justify-evenly bg-white text-[25px] text-[#344151] rounded-sm gap-12 p-3 px-5">
+            <!-- negative button  -->
+            <button class="border-r-2 border-[#bfbfbf] pr-5" onclick="decrement()">
+                <i class="fa-solid fa-minus"></i>
+            </button>
+            <!-- number  -->
+            <div class="font-bold" id="counter">
+                0
+            </div>
+            <!-- positive button  -->
+            <button class="border-l-2 border-[#bfbfbf] pl-5" onclick="increment()">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
