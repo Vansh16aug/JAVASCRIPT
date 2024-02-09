@@ -1,18 +1,13 @@
-// for(let i=1;i<=5;i++){
-//     let sq=i*i;
-//     console.log(`the square of ${i} is ${sq}`);
-// }
+const n = document.querySelector("#name").value;
+const email = document.querySelector("#email").value;
+const pass = document.querySelector("#password").value;
 
-// let str="VanshKumar";
-
-// for(let i=0;i<str.length;i++){
-//     console.log(`${i} is ${str[i]}`);
-// }
-
-function calculateArea(l,b){
-    return l*b;
+if (n === "") {
+    alert("Please enter your name");
+} else if (email === "") {
+    alert("Please enter your email");
+} else if (pass === "") {
+    alert("Please enter your password");
+} else {
+    // Form is valid, you can proceed with further actions
 }
-let a = prompt(`Enter the first: `);
-let b = prompt(`Enter the second: `);
-
-calculateArea(a,b);
