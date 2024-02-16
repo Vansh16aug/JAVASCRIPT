@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Down Event</title>
+    <!-- <link rel="stylesheet" href="./style2.css" /> -->
+    <style>
+        div {
+  background-color: rgb(199, 199, 128);
+  max-height: 400px;
+  padding: 20px;
+}
+
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+    </style>
+  </head>
+  <body id="body">
+    <div id="main">
+      <p>Press any key on your keyboard:</p>
+      <div id="eventInfo"></div>
+      <button id="bt1">hi</button>
+    </div>
+  </body>
+  <script>
+    // function showEventInfo(event) {
+    //   document.getElementById("eventInfo").innerHTML = `
+    // <p>Key: ${event.key}</p>
+    // <p>Code: ${event.code}</p>
+    // <p>Which: ${event.which}</p>
+    // <p>Shift: ${event.shiftKey}</p>
+    // <p>Ctrl: ${event.ctrlKey}</p>
+    // <p>Alt: ${event.altKey}</p>
+    // `;
+    // }
+    bt1.addEventListener("click", function () {
+      this.style.backgroundColor = "red";
+    });
+
+    main.addEventListener("click", function (event) {
+      this.style.backgroundColor = "yellow";
+    });
+    body.addEventListener("click", function (event) {
+      this.style.backgroundColor = "green";
+    });
+  </script>
+</html>
