@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Slideshow</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#slideshow-container {
+max-width: 800px;
+position: relative;
+margin: auto;
+}
+
+.slideshow-img {
+display: none;
+max-width: 100%;
+}
+
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 10px;
+}
+
+.prev {
+left: 0;
+}
+
+.next {
+right: 0;
+}
+</style>
+</head>
+<body>
+
+<h1>Responsive Image Slideshow</h1>
+<center>
+<div id="slideshow-container">
+<img class="slideshow-img" src="https://images.pexels.com/photos/3184450/pexels-photo-3184450.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Image 1" style="display: block;">
+<img class="slideshow-img" src="https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Image 2">
+<img class="slideshow-img" src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Image 3">
+<div class="prev" onclick="changeSlide(-1)">❮ Previous</div>
+<div class="next" onclick="changeSlide(1)">Next ❯</div>
+</div>
+</center>
+<script>
+let currentImageIndex = 0;
+const images = document.querySelectorAll('.slideshow-img');
+
+function showImage(index) {
+images.forEach(image => image.style.display = 'none');
+images[index].style.display = 'block';
+}
+
+function changeSlide(n) {
+currentImageIndex = (currentImageIndex + n + images.length) % images.length;
+showImage(currentImageIndex);
+}
+
+showImage(currentImageIndex); // Display initial image
+
+// Automatic slideshow
+let slideshowInterval = setInterval(() => changeSlide(1), 3000); // Change image every 3 seconds
+
+// Pause slideshow on hover
+document.getElementById('slideshow-container').addEventListener('mouseenter', () => clearInterval(slideshowInterval));
+document.getElementById('slideshow-container').addEventListener('mouseleave', () => slideshowInterval = setInterval(() => changeSlide(1), 3000));
+</script>
+
+</body>
+</html>
