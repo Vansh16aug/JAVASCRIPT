@@ -1,0 +1,56 @@
+<html>
+<head>
+<style type="text/css">
+.imgStyle
+{
+width:100px;
+height:100px;
+border:3px solid grey;
+
+}
+</style>
+</head>
+
+<body>
+
+<img id="mainImage" style="border:3px solid grey" src="https://images.pexels.com/photos/235990/pexels-photo-235990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" height="500px" width="540px"/>
+<br>
+
+<div id="divId" onclick="changeImageOnClick()" onmouseover = "f1()" onmouseout = "f2()">
+<img id="2" class="imgStyle" src="https://images.pexels.com/photos/235990/pexels-photo-235990.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+<img id="3" class="imgStyle" src="https://images.pexels.com/photos/12347783/pexels-photo-12347783.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+<img id="4" class="imgStyle" src="https://images.pexels.com/photos/10342785/pexels-photo-10342785.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+<img id="5" class="imgStyle" src="https://images.pexels.com/photos/9160596/pexels-photo-9160596.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+<img id="6" class="imgStyle" src="https://images.pexels.com/photos/12989648/pexels-photo-12989648.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load">
+</div>
+
+<script>
+
+function changeImageOnClick()
+{
+
+
+if(x.tagName=="IMG")
+{
+a=x.getAttribute("src");
+document.getElementById("mainImage").setAttribute("src",a);
+}
+}
+function f1()
+{
+x=event.target;
+x.style.cursor = 'pointer';
+x.style.borderColor = 'red';
+}
+function f2()
+{
+x=event.target;
+x.style.borderColor = 'grey';
+}
+
+</script>
+
+</body>
+</html>
+
+11:47 AM
