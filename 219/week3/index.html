@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error Example</title>
+</head>
+<body>
+  <h1>Error Example</h1>
+  <p id="dynamic-text">This is a dynamic paragraph.</p>
+  <button id="change-text-button">Change Text</button>
+  <button id="toggle-button">Toggle Image</button>
+  <img id="image" src="image.jpg" style="display: none;">
+  <button id="change-color-button">Change Background Color</button>
+
+  <script>
+    // Syntax Error: Missing semicolon
+    let greeting = "Hello, world"
+
+    // Reference Error: Incorrect variable name
+    document.getElementById('change-text-bttn').addEventListener('click', function() {
+      document.getElementById('dynamic-text').textContent = "New text!";
+    });
+
+    // Type Error: Incorrect usage of style property
+    const toggleButton = document.getElementById('toggle-button');
+    toggleButton.addEventListener('click', function() {
+      let image = document.getElementById('image');
+      image.style.displayy = 'block'; // should be 'display', not 'displayy'
+    });
+
+    // Range Error: Index out of bounds
+    let colors = ['red', 'green', 'blue'];
+    console.log(colors[3]); // accessing index 3 which doesn't exist
+
+    // User input causing Reference Error
+    document.getElementById('change-color-button').addEventListener('click', changeBackgroundColor);
+
+    function changeBackgroundColor() {
+      let newColor = prompt("Enter a new background color:");
+      document.body.style.backgroundColor = newColor; // if user cancels prompt, newColor will be null causing Type Error
+    }
+  </script>
+</body>
+</html>

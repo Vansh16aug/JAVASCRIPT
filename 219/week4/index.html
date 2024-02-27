@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM Manipulation Example</h1>
+  <p id="dynamic-text">This is a dynamic paragraph.</p>
+  <button id="toggle-button">Toggle Image</button>
+  <img id="image" src="image.jpg" style="display: none;">
+  <button id="change-color-button">Change Background Color</button>
+
+  <script>
+    // Change text content of a paragraph dynamically
+    document.getElementById('dynamic-text').textContent = "New dynamic text!";
+
+    // Toggle the visibility of an image with a button click
+    const toggleButton = document.getElementById('toggle-button');
+    const image = document.getElementById('image');
+    toggleButton.addEventListener('click', function() {
+      if (image.style.display === 'none') {
+        image.style.display = 'block';
+      } else {
+        image.style.display = 'none';
+      }
+    });
+
+    // Change the background color of the webpage
+    const changeColorButton = document.getElementById('change-color-button');
+    changeColorButton.addEventListener('click', function() {
+      const newColor = getRandomColor();
+      document.body.style.backgroundColor = newColor;
+    });
+
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>
